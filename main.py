@@ -2,7 +2,7 @@ import telebot
 import requests
 
 import os
-my_secret = os.environ['key']
+my_secret = os.environ.get('API_KEY')
 bot = telebot.TeleBot(my_secret)
 
 url = "https://api.coindcx.com/exchange/ticker"
