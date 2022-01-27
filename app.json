@@ -1,0 +1,7 @@
+{
+    "name": "Shibou Bot",
+    "description": "testing",
+    "buildpacks":[
+      {"url": "https://github.com/heroku/heroku-buildpack-python"}
+    ]
+  }
