@@ -54,5 +54,16 @@ def calc(message):
   re = message.text.strip("/eval")
   bot.reply_to(message, eval(re))
 
+  
+def get_kitty():
+    contents = requests.get('https://api.thecatapi.com/v1/images/search').json()
+    image_url = contents[0]['url']
+    return image_url
+
+@bot.message_handler(commands = ['send_kitty'])
+def send_kitty(message):
+    url = get_kitty()
+    bot.send_message(message.chat.id, url)
+
 
 bot.polling()
